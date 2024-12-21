@@ -158,9 +158,53 @@ body {
     /* width: 100%; */
 }
 
-.character {
+.character-wrapper {
     background-color: var(--eniripsaPeau);
     padding: 5px;
+    padding-top: 25px;
+    color: white;
+    border: 3px solid var(--eniripsaRouge);
+    display: grid;
+    grid-template-columns: 100px 200px 100px;
+    grid-template-rows:  repeat(3, 100px);
+    justify-content: start;
+    gap: 15px;
+}
+
+.guilde-alliance {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    place-items: center;
+}
+
+.character-alliance-photo, .character-guilde-photo {
+    width: 100%;
+    height: 100%;
+    place-items: center;
+}
+
+.character-logo {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+}
+
+/* nom, oméga, points de succès */
+.character-informations {
+    color: var(--rena);
+    grid-column: 3/4;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+.character-title {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    place-self: start center;
 }
 
 
