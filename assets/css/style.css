@@ -28,7 +28,9 @@ body {
     --eniripsaPeau: #e19b39;
     --dofusBlack: #2e2f26;
     --dofusGreen: #a6c501;
+    --dofusOlive: #9bb010;
     --dofusGray: #525251;
+    --dofusYellow: #facf01;
 }
 
 body, .dark_theme {
@@ -109,6 +111,8 @@ body {
     width: 980px;
     padding: 0;
     margin: auto;
+    font: italic 1.2rem "Fira Sans", serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header {
@@ -159,22 +163,25 @@ body {
 }
 
 .character-wrapper {
-    background-color: var(--eniripsaPeau);
+    background-color: var(--dofusBlack);
     padding: 5px;
     padding-top: 25px;
     color: white;
     border: 3px solid var(--eniripsaRouge);
     display: grid;
-    grid-template-columns: 100px 200px 100px;
+    grid-template-columns: 100px 200px 100px 1fr 1fr;
     grid-template-rows:  repeat(3, 100px);
     justify-content: start;
     gap: 15px;
+
 }
 
 .guilde-alliance {
     grid-column: 1/2;
     grid-row: 1/3;
     place-items: center;
+    background-color: var(--dofusGray);
+    border: 3px solid var(--eniripsaPeau);
 }
 
 .character-alliance-photo, .character-guilde-photo {
@@ -189,6 +196,12 @@ body {
     width: 100%;
     height: 100%;
     place-items: center;
+    border: 3px solid var(--eniripsaPeau);
+    border-radius: 10% / 50%;
+}
+
+.character-title {
+    color: var(--rena);
 }
 
 /* nom, oméga, points de succès */
@@ -199,6 +212,15 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     place-items: center;
+    color: white;
+}
+
+.character-informations > span {
+    border-bottom: solid 1px black;
+}
+
+.achievements {
+    color: var(--dofusYellow);
 }
 
 .character-title {
@@ -207,7 +229,77 @@ body {
     place-self: start center;
 }
 
-
 .contact-logo {
     width: 50px;
+}
+
+.character-builds {
+    grid-column: 4/6;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    
+    background-color: #0095ff;
+    
+}
+
+.stuffsOrSkills {
+    grid-column: 1/6;
+    grid-row: 1/2;
+    place-self: center;
+}
+
+.builds {
+    grid-column: 1/6;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-columns: repeat(6,25px);
+    grid-template-rows: repeat(2,25px);
+    gap: 25px;
+    align-items: start center;
+
+}
+
+.build {
+    margin: 10px;
+}
+
+/* .clickable-btn {
+    padding: 10px 20px;
+    background-color: var(--dofusBlack);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* font-size: 16px; 
+}  
+.clickable-btn:hover {
+    background-color: #0056b3;
+}
+*/
+
+.clickable-btn {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6), 0 2px 5px rgba(0, 0, 0, 0.5);
+    color: white;
+    /* font-size: 14px; */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+ 
+}
+
+.clickable-btn:hover {
+    transform: scale(1.05);
+    box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.clickable-btn:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 4px 9px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
 }
